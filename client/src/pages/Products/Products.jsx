@@ -47,19 +47,19 @@ const Products = () => {
               id="asc"
               value={"asc"}
               name="price"
-              onChange={(e) => setSort("asc")}
+              onChange={() => setSort("asc")}
             />
             <label htmlFor="asc">Price (Lowest first)</label>
           </div>
           <div className="inputItem">
             <input
               type="radio"
-              id="asc"
-              value={"asc"}
+              id="desc"
+              value={"desc"}
               name="price"
-              onChange={(e) => setSort("desc")}
+              onChange={() => setSort("desc")}
             />
-            <label htmlFor="asc">Price (Highest first)</label>
+            <label htmlFor="desc">Price (Highest first)</label>
           </div>
         </div>
       </div>
