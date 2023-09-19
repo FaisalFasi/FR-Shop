@@ -37,7 +37,7 @@ const Product = () => {
                   data?.attributes?.img?.data?.attributes?.url
                 }
                 alt=""
-                onClick={(e) => setSelectedImg("img")}
+                onClick={() => setSelectedImg("img")}
               />
               <img
                 src={
@@ -45,7 +45,7 @@ const Product = () => {
                   data?.attributes?.img2?.data?.attributes?.url
                 }
                 alt=""
-                onClick={(e) => setSelectedImg("img2")}
+                onClick={() => setSelectedImg("img2")}
               />
             </div>
             <div className="mainImg">
