@@ -16,7 +16,13 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  if (loading) {
+    return "Loading...";
+  }
 
+  if (error) {
+    return `Error: ${error.message}`;
+  }
   return (
     <div className="product">
       {loading ? (
@@ -27,7 +33,7 @@ const Product = () => {
             <div className="images">
               <img
                 src={
-                  process.env.REACT_APP_MEDIA_URL +
+                  process.env.REACT_APP_UPLOAD_URL +
                   data?.attributes?.img?.data?.attributes?.url
                 }
                 alt=""
@@ -35,7 +41,7 @@ const Product = () => {
               />
               <img
                 src={
-                  process.env.REACT_APP_MEDIA_URL +
+                  process.env.REACT_APP_UPLOAD_URL +
                   data?.attributes?.img2?.data?.attributes?.url
                 }
                 alt=""
@@ -46,7 +52,7 @@ const Product = () => {
               {data && data.attributes && data.attributes.img && (
                 <img
                   src={
-                    process.env.REACT_APP_MEDIA_URL +
+                    process.env.REACT_APP_UPLOAD_URL +
                     data.attributes[selectedImg].data.attributes.url
                   }
                   alt=""
